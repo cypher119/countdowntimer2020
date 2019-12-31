@@ -1,0 +1,54 @@
+<!--created by Anupam Kumar Aniket-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>countdown</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+      function calculateTime(){
+        var newYear = new Date('Jan 1, 2020 00:00:00');
+        var now = new Date();
+
+        var currentTime = now.getTime();
+        var newYearTime = newYear.getTime();
+
+        var remainTime = newYearTime - currentTime;
+
+        var sec = 1000;
+        var min = sec * 60;
+        var hr = min * 60;
+
+        var hour = Math.floor(remainTime / hr);
+        var minute = Math.floor((remainTime % hr) / (min));
+        var seconds = Math.floor((remainTime % min) / (sec));
+
+        document.getElementById("hrs").innerHTML = hour;
+        document.getElementById("mins").innerHTML = minute;
+        document.getElementById("secs").innerHTML = seconds;
+
+      }
+
+      setInterval(calculateTime,1001);
+  </script>
+
+  <div class="container">
+    <h2>countdown</h2>
+    <div class="timer">
+      <div id="hrs">
+
+      </div>
+      <div id="mins">
+
+      </div>
+      <div id="secs">
+
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
